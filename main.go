@@ -64,10 +64,6 @@ func main() {
 	fmt.Println(os.Getenv("DATABASE_URL"))
 
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "Hello world!",
-		})
-	})
+	r.GET("/", GETColors)
 	r.Run()
 }
